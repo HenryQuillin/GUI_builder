@@ -9,28 +9,7 @@ master.geometry('250x750')
 master.configure(background="#222222")
 master.title('GUI_builder')
 
-#canvas = Canvas(master, width='300', height='300')
 
- 
-
-'''
-counter= 0
-def lines():
-    global counter
-    canvas_height=20
-    canvas_width=200
-    y = int(canvas_height / 2) 
-    x1 = 0
-    x2 = canvas_width
-    y1 = 0
-    y2 = 0
-    canvas.create_line(x1, y1+counter, x2, y2 + counter)
-    counter = counter + 50 
-    print(counter)
-    #for x in range(0, 100, 10):
-        #canvas.create_line(x1, y1, x2, y2)
-        #canvas.create_line(x1, y1+x, x2, y2 + x)
-'''
 def change_bg_color(color):
     master.configure(background=color)
 
@@ -54,14 +33,7 @@ Label(master, text='email').pack()
 e3.pack()
 Label(master, text='password').pack() 
 e4.pack()
-'''
-e4.pack()
-e1.pack()
-e2.pack()
-e3.pack()
-e4.pack()
-'''
-
+#buttons
 red_button = Button(master, text='bg to red', command=lambda color='red': change_bg_color('red'), bg="red", fg="red", highlightbackground="red",
                 activebackground="red")
 red_button.pack()
@@ -72,6 +44,7 @@ green_button.pack()
 orange_button = Button(master, text='bg to orange', command=lambda color='orange': change_bg_color('orange'), bg="orange", fg="orange", highlightbackground="orange", activebackground="orange")
 orange_button.pack()
 
+#slider
 slider = Scale(master, from_=0, to=10,orient=HORIZONTAL) 
 slider.pack()
 slider = Scale(master, from_=100, to=1000, bg='gray',orient=HORIZONTAL)
@@ -133,9 +106,5 @@ filemenu.add_command(label='Exit', command=master.quit)
 helpmenu = Menu(menu) 
 menu.add_cascade(label='Help', menu=helpmenu) 
 helpmenu.add_command(label='About')
-
-
-
-
 
 master.mainloop()
